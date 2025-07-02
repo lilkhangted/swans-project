@@ -8,6 +8,7 @@ function App() {
       <header className="header">
         <nav className="navbar">
           <ul>
+            <li><a href="#"><img className='logo' src="/logo.jpg" alt="logo" /></a></li>
             <li>Trang chủ</li>
             <li>Khám Phá</li>
             <li>Sản Phẩm Nổi Bật</li>
@@ -37,6 +38,15 @@ function App() {
         <h2>Khuyến Mãi Đặc Biệt</h2>
         <p>Nhận ngay ưu đãi hấp dẫn cho đơn hàng đầu tiên của bạn.</p>
         <button>Xem Ngay</button>
+      </section>
+
+      <section className='offer-section'>
+        <div className='left-content'>
+        <h2 className='offer-text'>Khám phá ngay</h2>
+          <p>Nhận ngay ưu đãi hấp dẫn cho đơn hàng đầu tiên của bạn.</p>
+          <button className='more'>Xem ngay</button>
+        </div>
+        <div className='right-content'><img className='ring-img' src="/swan-ring.jpg" alt="nhan" /></div>
       </section>
 
       <section className="featured-products">
@@ -83,7 +93,6 @@ function App() {
             <p>Giá: 120₫</p>
           </div>
         </div>
-        <button>Xem Thêm</button>
       </section>
 
       <footer className="footer">
