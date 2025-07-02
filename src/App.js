@@ -53,45 +53,33 @@ function App() {
         <h2 className='title'>Sản Phẩm Nổi Bật</h2>
         <div className="products">
           <div className="product">
-          <img src="/book.avif" alt="" />
-            <h3>Sổ Tay Da</h3>
-            <p>Giá: 200₫</p>
+          <img src="/chain3.jpg" alt="" />
+            <h3>Vòng Cổ Vàng</h3>
+            <p>Giá: 2,800,000₫ </p>
           </div>
           <div className="product">
-            <img src="/classes.avif" alt="" />
-            <h3>Gọng Kính Thời Trang</h3>
-            <p>Giá: 130₫</p>
+            <img src="/handcup.jpg" alt="" />
+            <h3>Vòng Tay Đính Đá</h3>
+            <p>Giá: 2,300,000₫</p>
           </div>
+
           <div className="product">
-          <img src="/boxes.avif" alt="" />
-            <h3>Hộp Quà Sang Trọng</h3>
-            <p>Giá: 300₫</p>
+          <img src="/chain2.jpg" alt="" />
+            <h3>Vòng Cổ Ngũ Sắc</h3>
+            <p>Giá: 2,800,000₫</p>
           </div>
+
           <div className="product">
-          <img src="/hand-cup-1.avif" alt="" />
-            <h3>Vòng Tay Thời Trang</h3>
-            <p>Giá: 180₫</p>
-          </div>
-          <div className="product">
-          <img src="/bag.avif" alt="" />
-            <h3>Túi Xách Mini</h3>
-            <p>Giá: 280₫</p>
-          </div>
-          <div className="product">
-          <img src="/hand-cup-2.avif" alt="" />
+          <img src="/full-chain.jpg" alt="" />
             <h3>Dây Chuyền Ngọc Trai</h3>
-            <p>Giá: 250₫</p>
+            <p>Giá: 2,800,000₫</p>
           </div>
           <div className="product">
-          <img src="/chain.avif" alt="" />
+          <img src="/chain1.jpg" alt="" />
             <h3>Mặt Dây Chuyền Kim Loại</h3>
-            <p>Giá: 220₫</p>
+            <p>Giá: 2,800,000₫</p>
           </div>
-          <div className="product">
-          <img src="/handmade.avif" alt="" />
-            <h3>Khung Ảnh Thủ Công</h3>
-            <p>Giá: 120₫</p>
-          </div>
+
         </div>
       </section>
 
