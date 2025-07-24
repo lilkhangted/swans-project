@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import products from './products';
 import { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import './productDetail.css';
 import { useRef } from 'react';
 
@@ -39,84 +41,76 @@ const handleMouseLeave = () => {
 };
 
   return (
-    <div className="product-detail-container">
-      <div className="product-detail-left">
-        <div 
-          className="main-image-wrapper"
-          onMouseMove={(e) => handleMouseMove(e)}
-          onMouseLeave={() => handleMouseLeave()}
-        >
-          <img
-            src={product.image}
-            alt={product.name}
-            className="main-image"
-            ref={imageRef}
-            style={zoomStyle}
-          />
-        </div>
-        <div className="thumbnails">
-          <img src={product.image} alt="thumb" className="thumb" />
-        </div>
-      </div>
-
-      <div className="product-detail-right">
-        <h2>{product.name}</h2>
-        <p className="price">{product.price.toLocaleString()}₫</p>
-
-        <div className="select-group">
-          <label>Kích Thước *</label>
-          <select value={size} onChange={(e) => setSize(e.target.value)}>
-            <option value="">Chọn</option>
-            <option value="S">Nhỏ</option>
-            <option value="M">Trung</option>
-            <option value="L">Lớn</option>
-          </select>
-        </div>
-
-        <div className="select-group">
-          <label>Màu Sắc *</label>
-          <select value={color} onChange={(e) => setColor(e.target.value)}>
-            <option value="">Chọn</option>
-            <option value="gold">Vàng</option>
-            <option value="silver">Bạc</option>
-            <option value="pink">Hồng</option>
-          </select>
-        </div>
-
-        <div className="quantity-group">
-          <label>Số lượng *</label>
-          <div className="quantity-controls">
-            <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
-            <input type="number" value={quantity} readOnly />
-            <button onClick={() => setQuantity(quantity + 1)}>+</button>
+    <div className="product-detail">
+      <Header />
+      <div className="product-detail-container">
+        <div className="product-detail-left">
+          <div 
+            className="main-image-wrapper"
+            onMouseMove={(e) => handleMouseMove(e)}
+            onMouseLeave={() => handleMouseLeave()}
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              className="main-image"
+              ref={imageRef}
+              style={zoomStyle}
+            />
+          </div>
+          <div className="thumbnails">
+            <img src={product.image} alt="thumb" className="thumb" />
           </div>
         </div>
 
-        <button className="add-to-cart">Thêm vào giỏ hàng</button>
+        <div className="product-detail-right">
+          <h2>{product.name}</h2>
+          <p className="price">{product.price.toLocaleString()}₫</p>
 
-        <div className="share-icons">
-          <i className="fab fa-facebook-f"></i>
-          <i className="fab fa-pinterest"></i>
-          <i className="fab fa-whatsapp"></i>
-          <i className="fas fa-times"></i>
+          <div className="select-group">
+            <label>Kích Thước *</label>
+            <select value={size} onChange={(e) => setSize(e.target.value)}>
+              <option value="">Chọn</option>
+              <option value="S">Nhỏ</option>
+              <option value="M">Trung</option>
+              <option value="L">Lớn</option>
+            </select>
+          </div>
+
+          <div className="select-group">
+            <label>Màu Sắc *</label>
+            <select value={color} onChange={(e) => setColor(e.target.value)}>
+              <option value="">Chọn</option>
+              <option value="gold">Vàng</option>
+              <option value="silver">Bạc</option>
+              <option value="pink">Hồng</option>
+            </select>
+          </div>
+
+          <div className="quantity-group">
+            <label>Số lượng *</label>
+            <div className="quantity-controls">
+              <button onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
+              <input type="number" value={quantity} readOnly />
+              <button onClick={() => setQuantity(quantity + 1)}>+</button>
+            </div>
+          </div>
+
+          <button className="add-to-cart">Thêm vào giỏ hàng</button>
+
+          <div className="share-icons">
+            <i className="fab fa-facebook-f"></i>
+            <i className="fab fa-pinterest"></i>
+            <i className="fab fa-whatsapp"></i>
+            <i className="fas fa-times"></i>
+          </div>
         </div>
-      </div>
 
-      <div className="product-description">
-        <p>{product.description}</p>
-      </div>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2025 SwanStores. All rights reserved.</p>
-          <ul className="footer-links">
-            <li><a href="/">Trang chủ</a></li>
-            <li><a href="/about">Về chúng tôi</a></li>
-            <li><a href="/contact">Liên hệ</a></li>
-            <li><a href="/policy">Chính sách bảo mật</a></li>
-          </ul>
+        <div className="product-description">
+          <p>{product.description}</p>
         </div>
-      </footer>
+        <Footer />
+      </div>
     </div>
   );
 }

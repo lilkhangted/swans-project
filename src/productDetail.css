@@ -5,13 +5,14 @@
   background-color: #fef9f2;
   font-family: 'Segoe UI', sans-serif;
   align-items: center;
-  
+  justify-content: center;
 }
 
 .product-detail-left {
   flex: 1;
-  min-width: 300px;
+  max-width: fit-content;
   padding-right: 40px;
+  justify-items: end;
 }
 
 .main-image {
@@ -31,7 +32,7 @@
 
 .product-detail-right {
   flex: 1;
-  min-width: 300px;
+  max-width: fit-content;
 }
 
 .price {
@@ -101,6 +102,9 @@ select {
 .product-description {
   margin-top: 40px;
   flex-basis: 100%;
+  font-size: 18px;
+  color: #555;
+  justify-items: center;
 }
 
 .footer {

@@ -2,22 +2,15 @@ import React from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
 import products from "./products";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function HomePage() {
+  
     return (
         <div className="homepage">
         <h1 className='title-header'>Chào Mừng Đến Với SwanStores</h1>
-          <header className="header">
-            <nav className="navbar">
-              <ul>
-                <li><a href="#"><img className='logo' src="/logo.jpg" alt="logo" /></a></li>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Khám phá</a></li>
-                <li><a href="#">Sản Phẩm Nổi Bật</a></li>
-                <li><a href="#">Cửa Hàng</a></li>
-              </ul>
-            </nav>
-          </header>
+        <Header />
     
           <section id="home" className="hero">
             <div className="hero-left">
@@ -67,11 +60,7 @@ function HomePage() {
             ))}
           </div>
         </section>
-    
-          <footer className="footer">
-            <p>© 2035 by phụ kiện Swans. Powered and secured by Wix</p>
-            <p>Liên hệ: lyankhang2004@gmail.com| 0978677271</p>
-          </footer>
+          <Footer />
         </div>
       );
 }
