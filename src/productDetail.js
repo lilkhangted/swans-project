@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
-import products from './products'; // chứa danh sách sản phẩm
+import products from './products';
 import { useState } from 'react';
-import './productDetail.css'; // nhớ tạo file CSS
+import './productDetail.css';
+import { useRef } from 'react';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -10,16 +11,51 @@ function ProductDetail() {
   const [size, setSize] = useState('');
   const [color, setColor] = useState('');
   const [quantity, setQuantity] = useState(1);
+  const imageRef = useRef(null);
+  const [zoomStyle, setZoomStyle] = useState({});
+
 
   if (!product) return <p>Không tìm thấy sản phẩm.</p>;
+
+
+  const handleMouseMove = (e) => {
+  const image = imageRef.current;
+  const rect = image.getBoundingClientRect();
+
+  const x = ((e.clientX - rect.left) / rect.width) * 100;
+  const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+  setZoomStyle({
+    transformOrigin: `${x}% ${y}%`,
+    transform: 'scale(2)', // Phóng to gấp 2
+  });
+};
+
+const handleMouseLeave = () => {
+  setZoomStyle({
+    transform: 'scale(1)',
+    transformOrigin: 'center center',
+  });
+};
 
   return (
     <div className="product-detail-container">
       <div className="product-detail-left">
-        <img src={product.image} alt={product.name} className="main-image" />
+        <div 
+          className="main-image-wrapper"
+          onMouseMove={(e) => handleMouseMove(e)}
+          onMouseLeave={() => handleMouseLeave()}
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            className="main-image"
+            ref={imageRef}
+            style={zoomStyle}
+          />
+        </div>
         <div className="thumbnails">
           <img src={product.image} alt="thumb" className="thumb" />
-          {/* thêm ảnh phụ nếu có */}
         </div>
       </div>
 
@@ -69,6 +105,18 @@ function ProductDetail() {
       <div className="product-description">
         <p>{product.description}</p>
       </div>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <p>&copy; 2025 SwanStores. All rights reserved.</p>
+          <ul className="footer-links">
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/about">Về chúng tôi</a></li>
+            <li><a href="/contact">Liên hệ</a></li>
+            <li><a href="/policy">Chính sách bảo mật</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }

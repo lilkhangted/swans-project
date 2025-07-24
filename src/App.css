@@ -1,4 +1,4 @@
-.app {
+.homepage {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -6,15 +6,13 @@
 
 .header {
   background-color: #f8f8f8;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   animation: fadeIn 1s ease-in;
 }
 .logo {
-  width: 120px;
+  width: 150px;
   height: auto;
-  position: relative;
-  top: 35px;
 }
 .title-header {
   font-size: 36px;
@@ -25,19 +23,27 @@
 }
 
 .navbar ul {
-  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.navbar li {
-  display: inline;
-  margin: 0 15px;
+.navbar li{
+  margin: 0 15px; 
+  position:relative;
   transition: color 0.3s;
 }
 
 .navbar li:hover {
   color: #ccb558; /* Màu khi hover */
+}
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  
 }
 
 .banner {

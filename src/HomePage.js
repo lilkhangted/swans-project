@@ -11,16 +11,18 @@ function HomePage() {
             <nav className="navbar">
               <ul>
                 <li><a href="#"><img className='logo' src="/logo.jpg" alt="logo" /></a></li>
-                <li>Trang chủ</li>
-                <li>Khám Phá</li>
-                <li>Sản Phẩm Nổi Bật</li>
-                <li>Cửa Hàng</li>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Khám phá</a></li>
+                <li><a href="#">Sản Phẩm Nổi Bật</a></li>
+                <li><a href="#">Cửa Hàng</a></li>
               </ul>
             </nav>
           </header>
     
           <section id="home" className="hero">
             <div className="hero-left">
+            <h1>
+            </h1>
               <p className="hero-text">
                 Chào mừng bạn đến với cửa hàng phụ kiện Swans,
                 nơi bạn có thể khám phá những sản phẩm độc đáo
@@ -68,7 +70,7 @@ function HomePage() {
     
           <footer className="footer">
             <p>© 2035 by phụ kiện Swans. Powered and secured by Wix</p>
-            <p>Liên hệ: info@mysite.com | 123-456-7890</p>
+            <p>Liên hệ: lyankhang2004@gmail.com| 0978677271</p>
           </footer>
         </div>
       );
