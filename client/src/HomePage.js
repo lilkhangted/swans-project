@@ -1,12 +1,26 @@
 import React from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import products from "./products";
 import Header from "./Header";
 import Footer from "./Footer";
 
 function HomePage() {
-  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 4;
+
+  const maxIndex = Math.max(0, products.length - itemsPerPage);
+
+  const handlePrev = () => {
+    setCurrentIndex(prev => Math.max(0, prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex(prev => Math.min(maxIndex, prev + 1));
+  };
+
+  const visibleProducts = products.slice(currentIndex, currentIndex + itemsPerPage);
     return (
         <div className="homepage">
         <h1 className='title-header'>Chào Mừng Đến Với SwanStores</h1>
@@ -45,21 +59,24 @@ function HomePage() {
             </div>
             <div className='right-content'><img className='ring-img' src="/swan-ring.jpg" alt="nhan" /></div>
           </section>
-    
-          <section className="featured-products">
+
+          
           <h2 className='title'>Sản Phẩm Nổi Bật</h2>
-          <div className="products">
-            {products.map(product => (
-              <div className="product" key={product.id}>
-                <Link to={`/product/${product.id}`}>
-                  <img src={product.image} alt={product.name} />
-                  <h3>{product.name}</h3>
-                  <p>Giá: {product.price.toLocaleString()}₫</p>
-                </Link>
+          <section className="featured-products">
+              <div className="products">
+                <button className="slider-btn left" onClick={handlePrev}>&lt;</button>
+                {visibleProducts.map(product => (
+                  <div className="product" key={product.id}>
+                    <Link to={`/product/${product.id}`}>
+                      <img src={product.image} alt={product.name} />
+                      <h3>{product.name}</h3>
+                      <p>Giá: {product.price.toLocaleString()}₫</p>
+                    </Link>
+                  </div>
+                ))}
+                <button className="slider-btn right" onClick={handleNext}>&gt;</button>
               </div>
-            ))}
-          </div>
-        </section>
+          </section>
           <Footer />
         </div>
       );
